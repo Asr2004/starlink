@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 70px;
+      padding: 10px 70px;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+
+    }
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      height: 30px;
+      width: 150px;
+    }
+
+    .roam a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+    }
+
+    .roam {
+      display: flex;
+      align-items: center;
+    }
+
+    .right-side-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .anchor a {
+      margin: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .anchor a:first-child {
+      border-right: 1px solid white;
+      padding-right: 20px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .section{
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content {
+        position: relative;
+        top: -350px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        opacity: 0.85;
+    }
+    .content h1 {
+        font-size: 56px;
+        margin-bottom: 10px;
+    }
+    .content p {
+        font-size: 24px;
+        margin-bottom: 20px;       
+    }
+    .boxes{
+        display: flex;
+        position: relative;
+        top:100px;
+        justify-content: space-evenly;
+        align-items: center;
+           
+    }
+    .box1,.box2 {
+        width: 500px;
+        height: 250px;
+        padding: 40px 48px;
+        border-radius:10px;
+        border: 1px solid gray;
+    }
+    .order button{
+        border: 1px solid black;
+        padding:  10px 20px;
+        margin-left:20px ;
+        border-radius: 5px;
+    }
+    .order{
+        margin-top: 50px;
+    }
+    .starlink{
+        height: 70%;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .learn{
+        display: flex;
+        gap: 15px;
+    }
+    .learn a{
+        text-decoration: none;
+        color:white;
+    }
+    .contain{
+        color: white;
+        opacity: 0.85; 
+        position: relative;
+        left: 20px;
+        bottom:500px;
+    }
+    .online-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 70px;
+        gap: 60px;
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+      }
+  
+      .online-section video {
+        width: 100px;
+        height: 400px;
+        border-radius: 6px;
+        float: left;
+        width: 60%;
+      }
+      .online-content h1 {
+        font-size: 40px;
+        color: white;
+        margin-bottom: 20px;
+    
+      }
+  
+      .online-content p {
+        font-size: 16px;
+        color: #ccc;
+        margin-bottom: 70px;
+      }
+  
+      .steps {
+        margin-bottom: 30px;
+      }
+  
+      .steps p {
+        font-size: 18px;
+        border-left: 2px solid white;
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }
+  
+      .downloads a {
+        text-decoration: none;
+        color: white;
+        margin-right: 30px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+  
+      .downloads a:hover {
+        text-decoration: underline;
+      }
+      .online-section1 {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+      }
+  
+      .online-left {
+        flex: 1;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 40px;
+ 
+      }
+  
+      .online-left h3 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: white;
+        padding:  0 30px;
+      }
+  
+      .online-left p {
+        font-size: 16px;
+        color: #ccc;
+        max-width: 80%;
+        line-height: 1.5;
+        padding:  0 30px;
+      }
+      a 
+      {
+        color: #fff;
+    }
+    .engi {
+        position: relative;
+        top: -600px;
+        padding: 20px;
+        color: white;
+        opacity: 0.85;
+    }
+    .trial-section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        background-color: black;
+        
+      }
+  
+      .trial-section h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        color: white;
+      }
+  
+      .trial-section p {
+        font-size: 20px;
+        color: white;
+        margin-bottom: 40px;
+      }
+  
+      .form-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+  
+      .form-row input[type="text"] {
+        padding: 16px;
+        width: 300px;
+        background-color: #1f1f1f;
+        color: white;
+        border: 1px solid #444;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+  
+      .form-row button {
+        padding: 15px 30px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+  
+      .availability-link {
+        margin-top: 15px;
+        font-size: 14px;
+      }
+  
+      .availability-link a {
+        color: white;
+        text-decoration: none;
+      }
+  
+      .availability-link a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        header {
+          padding: 10px 20px;
+          flex-direction: column;
+          height: auto;
+        }
+      
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .roam, .right-side-menu {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+      
+        .boxes {
+          flex-direction: row;
+          top: 0;
+          padding: 0 10px;
+        }
+      
+        .box1, .box2 {
+          width: 200px;
+          height: 150px;
+          margin-bottom: 20px;
+        }
+
+        .connect h2 {
+          font-size: 10px;
+        }
+      
+        .online-section {
+          flex-direction: column;
+          padding: 30px 20px;
+          gap: 30px;
+        }
+      
+        .online-section video {
+          width: 100%;
+          height: auto;
+        }
+      
+        .online-content h1 {
+          font-size: 28px;
+        }
+      
+        .online-section1 {
+          flex-direction: column;
+        }
+      
+        .online-left {
+          width: 100%;
+          padding: 20px;
+        }
+      
+        .online-left img {
+          width: 100%;
+          height: auto;
+        }
+      
+        .content {
+          top: -250px;
+        }
+      
+        .engi {
+          top: -300px;
+          padding: 10px;
+        }
+      
+        .trial-section {
+          padding: 20px;
+        }
+      
+        .form-row {
+          flex-direction: column;
+          gap: 15px;
+        }
+      
+        .form-row input {
+          width: 100%;
+        }
+      
+        .form-row button {
+          width: 100%;
+        }
+      }
+      
+    
+          
+     
+  
+       
+    </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <img src="/asserts/starlogo" alt="Logo">
+      <div class="roam">
+        <a href="#">PRESIDENTIAL</a>
+        <a href="#">ROAM</a>
+      </div>
+      <div class="right-side-menu">
+        <div class="anchor">
+          <a href="#">PERSONAL</a>
+          <a href="#">BUSINESS</a>
+        </div>
+        <button><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="section">
+    <img src="/asserts/sky" alt="Background Image">
+    <div class="content">
+        <h1>HIGH-SPEED INTERNET<br>AROUND THE WORLD</h1>
+        <p>Connect at home or on the go<br>See<b> speeds <b>in your country</p>
+        <a href="#">WATCH NOW</a>
+        <div class="boxes">
+            <div class="box1">
+                <div class="connect">
+                    <h2 style="font-size: 20px;">RESIDENTIAL</h2>
+                    <P style="font-size: 15px;">Connect at home</P>
+                    <div class="order">
+                        <button style="background-color: white;color:black;">ORDER NOW</button>
+                        <button style="background-color: black;color:white;">LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="connect">
+                    <h2 style="font-size: 20px;">RESIDENTIAL</h2>
+                    <P style="font-size: 15px;">Connect at home</P>
+                    <div class="order">
+                        <button style="background-color: white;color:black;">ORDER NOW</button>
+                        <button style="background-color: black;color:white;">LEARN MORE</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </section>
+    <div class="starlink">
+        <h2 style="margin-bottom: 20px;">STARLINK FOR BUSINESS AND POWER USERS</h2>
+        <div class="learn">
+            <p>RELIABLE HIGH-SPEED INTERNET DESIGNED TO KEEP BUSINESS CONECTES.</p>
+            <a href="#">LEARN MORE</a>
+        </div>
+    </div>
+
+    <section class="section">
+        <img src="/asserts/star3.webp" alt="Background Image">
+        <div class="contain">
+            <h3 style="font-size: 35px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin-bottom:10px;padding: 0 15px">CONNECTIVITY WHERE YOU<br>LEAST EXCEPT IT</h3>
+            <P style="font-size: 15px;font-family:'Times New Roman', Times, serif;padding: 0 15px;">
+                Streaming, video calls, online gaming, remote working and more are now<br> possible in even the mostremote locations thanks to the world’s most  <br>advanced internet system.
+            </P>
+        </div>
+    </section>
+    <div class="online-section">
+        <video src="/assets/Starlink_What_Is_Starlink.mp4" autoplay muted controls></video>
+        <div class="online-content">
+          <h1>GET ONLINE IN MINUTES</h1>
+          <p>Set up Starlink with just two steps. Instructions work in either order:</p>
+          <div class="steps">
+            <p>1 PLUG IT IN</p>
+            <p>2 POINT AT SKY</p>
+          </div>
+          <p>Starlink requires an unobstructed view of the sky. Download the Starlink app to determine your best install location.</p>
+          <div class="downloads">
+            <a href="#">DOWNLOAD FOR ANDROID</a>
+            <a href="#">DOWNLOAD FOR IOS</a>
+          </div>
+        </div>
+    </div>
+    <div class="online-section1">
+        <div class="online-left">
+            <h3 >Flexible Service Plans</h3>
+            <P >
+                Starlink offers flexible service plans everywhere. Check availability by entering your address <a href="#">here</a>.
+            </P>     
+        </div> 
+        <div class="online-left">
+        <img src="/asserts/home_a_feature2_d (1).webp" alt="" height="690px" width="800px" >    
+        </div>   
+    </div>
+    <section class="section">
+        <img src="/asserts/home_.webp" alt="Background Image">
+        <div class="engi">
+            <h3 style="font-family: 'Courier New', Courier, monospace; margin-bottom:20px;font-size:35px">ENGINEERED BY SPACEX</h3>
+            <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-bottom:30px">As the world's leading provider of launch services - and the only provider<br> with an orbital class reusable rocket - SpaceX has deep experience with <br>both spacecraft and on-orbit operations.</p>
+            <a href="#" style="border:1px solid white;padding :10px;border-radius:8px;text-decoration:none">LEARN MORE</a>
+        </div>
+    </section>
+    <section class="trial-section">
+        <h1>30 DAY TRIAL</h1>
+        <p>If not satisfied, return Starlink for a full refund.</p>
+    
+        <div class="form-row">
+          <input type="text" placeholder="TYPE AND SELECT" aria-label="Service Address" />
+          <button>ORDER NOW</button>
+        </div>
+    
+        <div class="availability-link">
+          <a href="#">VIEW AVAILABILITY & SPEEDS MAP </a>
+        </div>
+    </section>
+
+</body>
+</html>
